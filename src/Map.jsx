@@ -1,3 +1,4 @@
+// Based on example from https://github.com/alex3165/react-leaflet-draw/blob/master/example/edit-control.js
 import React, { Component } from 'react';
 import { Map, TileLayer, FeatureGroup } from 'react-leaflet';
 import { EditControl } from 'react-leaflet-draw';
@@ -9,7 +10,7 @@ export default class EditControlExample extends Component {
   }
 
   _onCreate(e) {
-    console.log('polyline', e.layer);
+    console.log(e.layer.toGeoJSON());
     // To edit this polyline call : polyline.handler.enable()
     console.log('Path created !');
   }
