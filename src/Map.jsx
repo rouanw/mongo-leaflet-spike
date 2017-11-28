@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, FeatureGroup } from 'react-leaflet';
 import { EditControl } from 'react-leaflet-draw';
+import reqwest from 'reqwest';
 
 export default class EditControlExample extends Component {
 
@@ -11,6 +12,16 @@ export default class EditControlExample extends Component {
 
   _onCreate(e) {
     console.log(e.layer.toGeoJSON());
+    reqwest({
+      type: 'json',
+      contentType: 'application/json',
+      headers: { accept: 'application/json' },
+      method: 'get',
+      timeout: 10000,
+      url: `http://localhost:3000/geo-json`,
+      method: 'post',
+      data: JSON.stringify(e.layer.toGeoJSON()),
+    });
     // To edit this polyline call : polyline.handler.enable()
     console.log('Path created !');
   }

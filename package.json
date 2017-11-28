@@ -3,19 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "leaflet": "^1.2.0",
     "leaflet-draw": "^0.4.13",
+    "mongodb": "^2.2.33",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-leaflet": "^1.7.6",
     "react-leaflet-draw": "^0.17.0",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "reqwest": "^2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node src/server.js",
+    "dev": "nodemon --watch src/server.js --exec yarn server"
+  },
+  "proxy": "http://localhost:3001",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
