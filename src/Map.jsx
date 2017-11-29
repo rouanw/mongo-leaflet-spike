@@ -16,9 +16,8 @@ export default class EditControlExample extends Component {
       type: 'json',
       contentType: 'application/json',
       headers: { accept: 'application/json' },
-      method: 'get',
       timeout: 10000,
-      url: `http://localhost:3000/geo-json`,
+      url: `/geo-json`,
       method: 'post',
       data: JSON.stringify(e.layer.toGeoJSON()),
     });
