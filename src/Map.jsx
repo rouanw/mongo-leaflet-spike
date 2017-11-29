@@ -6,12 +6,7 @@ import reqwest from 'reqwest';
 
 export default class EditControlExample extends Component {
 
-  _onEditPath(e) {
-    console.log('Path edited !');
-  }
-
   _onCreate(e) {
-    console.log(e.layer.toGeoJSON());
     reqwest({
       type: 'json',
       contentType: 'application/json',
@@ -21,32 +16,6 @@ export default class EditControlExample extends Component {
       method: 'post',
       data: JSON.stringify(e.layer.toGeoJSON()),
     });
-    // To edit this polyline call : polyline.handler.enable()
-    console.log('Path created !');
-  }
-
-  _onDeleted(e) {
-    console.log('Path deleted !');
-  }
-
-  _mounted(drawControl) {
-    console.log('Component mounted !');
-  }
-
-  _onEditStart() {
-    console.log('Edit is starting !');
-  }
-
-  _onEditStop() {
-    console.log('Edit is stopping !');
-  }
-
-  _onDeleteStart() {
-    console.log('Delete is starting !');
-  }
-
-  _onDeleteStop() {
-    console.log('Delete is stopping !');
   }
 
   render() {
@@ -58,15 +27,8 @@ export default class EditControlExample extends Component {
         />
         <FeatureGroup>
             <EditControl
-              position='bottomright'
-              onEdited={this._onEditPath}
+              position='topright'
               onCreated={this._onCreate}
-              onDeleted={this._onDeleted}
-              onMounted={this._mounted}
-              onEditStart={this._onEditStart}
-              onEditStop={this._onEditStop}
-              onDeleteStart={this._onDeleteStart}
-              onDeleteStop={this._onDeleteStop}
               draw={{
                 polyline: false,
                 rectangle: false,
