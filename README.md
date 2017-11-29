@@ -68,6 +68,7 @@ http post http://localhost:3001/search lat=-1.5 long=52.085
 
 - You need to create a `2dsphere` index in Mongo. See `server.js`.
 - The co-ordinates of the point you're querying with must also be provided in GeoJSON format. This means latitude comes first. See `server.js`.
+- If we wanted to use Google Maps instead of leaflet, we'd need to make sure that our current agreement with Google allows us to use their maps on pages that are limited to certain users. See https://developers.google.com/maps/terms#9-license-requirements and https://enterprise.google.com/maps/.
 
 ## Useful links
 
